@@ -5,11 +5,11 @@ This repository is the official pytorch implementation of our paper: "3D Shape C
 ## Training
 Train vqvae
 ...javascript
-python run_vqvae.py
+  python run_vqvae.py
 ...
 
 Train autoregressive model
 ...javascript
-python run_auto.py
+  python run_auto.py
 ...
 
