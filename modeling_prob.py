@@ -1,4 +1,4 @@
-from my_gpt import GPT
+import GPT
 import math
 import torch
 import torch.nn as nn
@@ -7,7 +7,6 @@ import torch.nn.functional as F
 from functools import partial
 
 from original_vqvae import _cfg
-# from my_vqvae8_re import _cfg
 from timm.models.registry import register_model
 from timm.models.layers import trunc_normal_ as __call_trunc_normal_
 
@@ -26,7 +25,7 @@ class ClassEncoder(nn.Module):
         super(ClassEncoder, self).__init__()
         self.reso = reso  # 512
 
-        self.Xct_pos_emb = nn.Parameter(nn.Embedding(reso, ninp).weight[None])  # 这里忘改了
+        self.Xct_pos_emb = nn.Parameter(nn.Embedding(reso, ninp).weight[None]) 
         self.Xbd_pos_emb = nn.Parameter(nn.Embedding(reso, ninp).weight[None])
 
         # Initialize coordinate token and latent token
@@ -42,8 +41,6 @@ class ClassEncoder(nn.Module):
         self.coord_vocab_size = coord_vocab_size
 
         self.latent_vocab_size = latent_vocab_size
-
-        # self.class_enc = nn.Embedding(nclasses, ninp)
 
         self.transformer = GPT(vocab_size=512, block_size=(self.reso + 256), n_layer=nlayers, n_head=nhead, n_embd=ninp, embd_pdrop=0.1, resid_pdrop=0.1, attn_pdrop=0.1)
 
@@ -171,7 +168,7 @@ class ClassEncoder(nn.Module):
     def get_token_embeddings(self, tok_embs, idx):
         token_embeddings = 0
         for i, tok_emb in enumerate(tok_embs):
-            token_embeddings = token_embeddings + tok_emb(idx[..., i])  ### 这里把code_ind_embs和coords_embs进行相加
+            token_embeddings = token_embeddings + tok_emb(idx[..., i]) 
         return token_embeddings
 
     @torch.jit.ignore
