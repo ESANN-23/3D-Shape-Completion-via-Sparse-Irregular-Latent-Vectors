@@ -4,12 +4,12 @@ This repository is the official pytorch implementation of our paper: "3D Shape C
 
 ## Training
 Train vqvae
-...javascrip
+...javascript
 python run_vqvae.py
 ...
 
 Train autoregressive model
-...javascrip
+...javascript
 python run_auto.py
 ...
 
