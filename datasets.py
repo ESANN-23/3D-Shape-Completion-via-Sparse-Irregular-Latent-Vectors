@@ -1,7 +1,6 @@
 import torch
 
 from dataset.shapenet import ShapeNet
-# from dataset.test_shapenet import ShapeNet
 
 class AxisScaling(object):
     def __init__(self, interval=(0.75, 1.25), jitter=True):
