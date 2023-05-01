@@ -10,6 +10,6 @@ python run_vqvae.py
 ```
 Train autoregressive model
 ```
-  python run_auto.py
+python run_auto.py
 ```
 
