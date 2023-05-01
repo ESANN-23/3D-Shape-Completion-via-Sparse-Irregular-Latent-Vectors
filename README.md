@@ -12,4 +12,5 @@ Train autoregressive model
 ```
 python run_auto.py
 ```
-
+## Shout-outs
+The implement of our code is based on [ShapeFormer](https://github.com/qheldiv/shapeformer) and [3DILG](https://github.com/1zb/3DILG), thanks to the authors
