@@ -34,7 +34,7 @@ def get_args():
                         help='Name of model to train')
     parser.add_argument('--vqvae', default='vqvae_128_512', type=str, metavar='MODEL',
                         help='Name of model to train')
-    parser.add_argument('--vqvae_pth', default='/home/lijiahui/Models/3DILR/pretrained/vqvae_512_1024_2048/checkpoint-799.pth', type=str, required=True)
+    parser.add_argument('--vqvae_pth', default='None', type=str, required=True)
 
     parser.add_argument('--point_cloud_size', default=2048, type=int,
                         help='images point cloud size')
